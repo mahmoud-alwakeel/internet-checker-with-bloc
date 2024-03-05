@@ -24,4 +24,10 @@ class InternetBloc extends   Bloc<InternetEvent, InternetState> {
       }
     });
   }
+
+  @override
+  Future<void> close() {
+    subscription!.cancel();
+    return super.close();
+  }
 }
